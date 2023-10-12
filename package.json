@@ -1,0 +1,20 @@
+{
+  "name": "parcel-base",
+  "version": "1.0.0",
+  "description": "npm install",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest --coverage"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "parcel": "^2.2.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}

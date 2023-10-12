@@ -1,0 +1,21 @@
+### Comandos a usar para que funcione jest
+
+- npm install
+
+### Comandos para correr las pruebas
+
+- npm run test
+
+### Comandos para probar la app
+
+- npm start
+
+### Acciones para ver el coverage en live server
+
+- entrar a las sisguientes carpetas/archivos
+  - coverage
+    - Icov-report
+      - click derecho en el archivo que se desea ver el coverage (funcionesWordle.js.html)
+        - click en open with live server
+      - si se desea ver el coverage global, click derecho en el archivo index.html
+        - click en open with live server
