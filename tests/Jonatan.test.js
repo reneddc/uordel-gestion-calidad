@@ -30,4 +30,14 @@ describe('FuncionesWordle', () => {
       funcionesWordle.concatenarResultado();
       expect(funcionesWordle.cadenaResultado).toEqual("HOLA");
     });
+    it('debería agregar la pista correctamente', () => {
+      const funcionesWordle = new FuncionesWordle();
+
+      funcionesWordle.nroIntentos = 3; 
+      funcionesWordle.cadenaResultado = 'LOBO'; 
+
+      funcionesWordle.agregarPista();
+
+      expect(funcionesWordle.listaPistas[2]).toEqual('LOBO');
+    });
   });
