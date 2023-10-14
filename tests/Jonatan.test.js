@@ -40,4 +40,11 @@ describe('FuncionesWordle', () => {
 
       expect(funcionesWordle.listaPistas[2]).toEqual('LOBO');
     });
+    it('deberia mostrar un mensaje de error: Ya existe esa palabra.', () => {
+      const funcionesWordle = new FuncionesWordle();
+      expect(() => {
+        funcionesWordle.definirNuevaPalabra('LLAVE');
+      }).toThrowError('Ya existe esa palabra.');
+    });
+
   });
