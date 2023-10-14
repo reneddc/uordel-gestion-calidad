@@ -18,4 +18,9 @@ describe('FuncionesWordle', () => {
       const resultado = funcionesWordle.obtenerCategoriaDeporte();
       expect(resultado).toEqual(["MESSI", "BALON", "DUKE", "CINCO"]);
     });
+    it('debería devolver la lista de las categorias de Sistemas', () => {
+      const funcionesWordle = new FuncionesWordle();
+      const resultado = funcionesWordle.obtenerCategoriaSistemas();
+      expect(resultado).toEqual(["HOLA", "PERO"]);
+    });
   });
