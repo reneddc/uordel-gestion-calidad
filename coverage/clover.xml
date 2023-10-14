@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1697232374757" clover="3.2.0">
-  <project timestamp="1697232374757" name="All files">
-    <metrics statements="105" coveredstatements="12" conditionals="31" coveredconditionals="0" methods="30" coveredmethods="2" elements="166" coveredelements="14" complexity="0" loc="105" ncloc="105" packages="1" files="2" classes="2"/>
+<coverage generated="1697299022457" clover="3.2.0">
+  <project timestamp="1697299022457" name="All files">
+    <metrics statements="105" coveredstatements="13" conditionals="31" coveredconditionals="0" methods="30" coveredmethods="3" elements="166" coveredelements="16" complexity="0" loc="105" ncloc="105" packages="1" files="2" classes="2"/>
     <file name="ExcepcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\ExcepcionesWordle.js">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="3" count="0" type="stmt"/>
     </file>
     <file name="funcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\funcionesWordle.js">
-      <metrics statements="104" coveredstatements="12" conditionals="31" coveredconditionals="0" methods="29" coveredmethods="2"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="6" count="2" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="12" count="2" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
+      <metrics statements="104" coveredstatements="13" conditionals="31" coveredconditionals="0" methods="29" coveredmethods="3"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="7" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
       <line num="19" count="0" type="stmt"/>
       <line num="20" count="0" type="stmt"/>
       <line num="21" count="0" type="cond" truecount="0" falsecount="3"/>
@@ -63,7 +63,7 @@
       <line num="91" count="0" type="stmt"/>
       <line num="92" count="0" type="stmt"/>
       <line num="96" count="2" type="stmt"/>
-      <line num="100" count="0" type="stmt"/>
+      <line num="100" count="1" type="stmt"/>
       <line num="104" count="0" type="stmt"/>
       <line num="108" count="0" type="stmt"/>
       <line num="112" count="0" type="stmt"/>

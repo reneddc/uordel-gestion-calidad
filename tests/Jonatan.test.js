@@ -13,4 +13,9 @@ describe('FuncionesWordle', () => {
         "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"
       ]);
     });
+    it('debería devolver la lista de las categorias de Deportes', () => {
+      const funcionesWordle = new FuncionesWordle();
+      const resultado = funcionesWordle.obtenerCategoriaDeporte();
+      expect(resultado).toEqual(["MESSI", "BALON", "DUKE", "CINCO"]);
+    });
   });
