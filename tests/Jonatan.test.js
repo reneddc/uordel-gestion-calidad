@@ -23,4 +23,11 @@ describe('FuncionesWordle', () => {
       const resultado = funcionesWordle.obtenerCategoriaSistemas();
       expect(resultado).toEqual(["HOLA", "PERO"]);
     });
+    it('deberia concatenar correctamente la cadena de resultado', () => {
+      const funcionesWordle = new FuncionesWordle();
+      expect(funcionesWordle.cadenaResultado).toBeUndefined();
+      funcionesWordle.cadenaResultado = ["H", "O", "L", "A"];
+      funcionesWordle.concatenarResultado();
+      expect(funcionesWordle.cadenaResultado).toEqual("HOLA");
+    });
   });
