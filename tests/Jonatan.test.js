@@ -46,5 +46,12 @@ describe('FuncionesWordle', () => {
         funcionesWordle.definirNuevaPalabra('LLAVE');
       }).toThrowError('Ya existe esa palabra.');
     });
-
+    it('deberia agregar la nueva palabra al array de palabras seleccionables', () => {
+      const funcionesWordle = new FuncionesWordle();
+      expect(() => {
+        funcionesWordle.definirNuevaPalabra('CINE');
+      }).not.toThrow();
+      expect(funcionesWordle.palabrasSeleccionables).toContain('CINE');
+      expect(funcionesWordle.tamPalabrasSeleccionables).toBe(17); 
+    });
   });
