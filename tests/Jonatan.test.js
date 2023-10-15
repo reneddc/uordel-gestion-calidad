@@ -54,4 +54,12 @@ describe('FuncionesWordle', () => {
       expect(funcionesWordle.palabrasSeleccionables).toContain('CINE');
       expect(funcionesWordle.tamPalabrasSeleccionables).toBe(17); 
     });
+
+    it('debería manejar la excepción y retornar el mensaje correcto al agregar una palabra existente', () => {
+      const funcionesWordle = new FuncionesWordle();
+      const resultado = funcionesWordle.agregarNuevaPalabra('HOJA');
+      expect(resultado).toBe('Ya existe esa palabra.');
+      expect(funcionesWordle.palabrasSeleccionables).toContain('HOJA');
+    });
+
   });
