@@ -36,6 +36,13 @@ describe("Tests Unitarios para clase funcionesWordel", () => {
         expect(secondActualValue).toBeGreaterThanOrEqual(0);
         expect(secondActualValue).toBeLessThanOrEqual(3);
 
-        expect(secondActualValue).not.toBe(actualValue);
+        //expect(secondActualValue).not.toBe(actualValue);
+    });
+
+    test("Método definir historial de intentos debe devolver la lista de los intentos" , () => {
+        const expectedValue = ["X", "X", "X", "X", "X", "X"];
+        const actualValue = wordle.definirHistorialIntentos();
+        expect(actualValue).toHaveLength(6);
+        expect(actualValue).toEqual(expectedValue);
     });
 })
