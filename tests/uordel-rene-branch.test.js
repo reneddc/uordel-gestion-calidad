@@ -10,4 +10,11 @@ describe("Tests Unitarios para clase funcionesWordel", () => {
         const actualValue = wordle.definirTamanioPalabraSecreta(palabraSecreta);
         expect(actualValue).toBe(expectedValue);
     });
+    
+    test("Método definir lista pistas debería devolver la lista de las pistas" , () => {
+        const expectedValue = ["X", "X", "X", "X", "X", "X"];
+        const actualValue = wordle.definirListaPistas();
+        expect(actualValue).toHaveLength(6);
+        expect(actualValue).toEqual(expectedValue);
+    });
 })
