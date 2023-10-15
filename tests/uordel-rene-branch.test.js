@@ -17,4 +17,13 @@ describe("Tests Unitarios para clase funcionesWordel", () => {
         expect(actualValue).toHaveLength(6);
         expect(actualValue).toEqual(expectedValue);
     });
+
+    
+    test("Método obtener pista al azar debe devolver una letra de la palabra secreta, en este caso la primera letra" , () => {
+        const palabraSecreta = "HOLA";
+        const actualValue = wordle.obtenerPistaAlAzar(palabraSecreta);
+        const expectedValue = "H";
+        expect(actualValue).toBe(expectedValue);
+        expect(palabraSecreta).toContain(actualValue);
+    });
 })
