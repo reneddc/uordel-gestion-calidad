@@ -62,4 +62,11 @@ describe('FuncionesWordle', () => {
       expect(funcionesWordle.palabrasSeleccionables).toContain('HOJA');
     });
 
+    it('debería agregar correctamente una palabra nueva y retornar la palabra', () => {
+      const funcionesWordle = new FuncionesWordle();
+      const resultado = funcionesWordle.agregarNuevaPalabra('NUEVA');
+      expect(resultado).toBe('NUEVA');
+      expect(funcionesWordle.palabrasSeleccionables).toContain('NUEVA');
+    });
+
   });
