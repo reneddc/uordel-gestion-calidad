@@ -26,4 +26,16 @@ describe("Tests Unitarios para clase funcionesWordel", () => {
         expect(actualValue).toBe(expectedValue);
         expect(palabraSecreta).toContain(actualValue);
     });
+
+    test("Método obtener posicion pista al azar debe devolver un valor random entre los rangos de 0 al tamaño de la palabra secreta menos 1" , () => {
+        const palabraSecreta = "HOLA";
+        const actualValue = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
+        expect(actualValue).toBeGreaterThanOrEqual(0);
+        expect(actualValue).toBeLessThanOrEqual(3);
+        const secondActualValue = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
+        expect(secondActualValue).toBeGreaterThanOrEqual(0);
+        expect(secondActualValue).toBeLessThanOrEqual(3);
+
+        expect(secondActualValue).not.toBe(actualValue);
+    });
 })
