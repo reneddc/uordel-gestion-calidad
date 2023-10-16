@@ -53,11 +53,13 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
     let palabrasSeleccionables;
     let valorActual;
     let valorEsperado;
+    let cadenaResultado;
 
     beforeEach(() => {
         palabrasSeleccionables = wordleLimpio.obtenerListaPalabras();
         valorActual = null;
         valorEsperado = null;
+        cadenaResultado = [];
     });
     
     test("En el método definir palabra secreta si ingreso una palabra que no existe, debería agregarse la palabra a la lista de palabras existentes y devolverla" , () => {
@@ -75,6 +77,15 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         valorEsperado = palabraSecreta;
         valorActual = wordle.definirPalabraSecreta(palabraSecreta);
         expect(valorActual).toBe(valorEsperado);
+    });
+
+    test("En el método definir azules, debe modificar los arrays  CadenaResultado y copiaPalabraSecreta si hay azules en la palabra" , () => {
+        const intento = "HOJA";
+        wordle.generarResultadoVacio(4);
+        cadenaResultado = wordle.obtenerCadenaResultado();
+        wordle.definirAzules(palabraSecreta,intento);
+        expect(cadenaResultado).toContain("z");
+        expect(cadenaResultado[0]).toMatch(/z/);
     });
 
 
