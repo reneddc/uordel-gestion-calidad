@@ -79,7 +79,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(valorActual).toBe(valorEsperado);
     });
 
-    test("En el método definir azules, debe modificar los arrays  CadenaResultado y copiaPalabraSecreta si hay azules en la palabra" , () => {
+    test("En el método definir azules, debe modificar los arrays CadenaResultado y copiaPalabraSecreta si hay azules en la palabra" , () => {
         const intento = "HOJA";
         wordle.generarResultadoVacio(4);
         cadenaResultado = wordle.obtenerCadenaResultado();
@@ -87,6 +87,18 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(cadenaResultado).toContain("z");
         expect(cadenaResultado[0]).toMatch(/z/);
     });
+
+    test("En el método definir azules, no debe modificar los arrays CadenaResultado y copiaPalabraSecreta porque no hay azules en la palabra" , () => {
+        const intento = "UBER";
+        wordle.generarResultadoVacio(4);
+        cadenaResultado = wordle.obtenerCadenaResultado();
+        wordle.definirAzules(palabraSecreta,intento);
+        expect(cadenaResultado).not.toContain("z");
+        cadenaResultado.forEach((cadena) => {
+            expect(cadena).not.toMatch(/z/);
+        });
+    });
+
 
 
 })
