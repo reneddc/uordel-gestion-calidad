@@ -204,4 +204,16 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
         expect(valorActual).toContain(nuevaPalabra);
         expect(valorActual).toEqual(valorEsperado);
     });
+
+    
+    test("En el método definir categorias debe modificar la categoría UCB" , () => {
+        let nuevaPalabra = "CATO";
+        let categoria = ["UCB"]
+        wordle.definirNuevaPalabra(nuevaPalabra);
+        wordle.definirCategorias(categoria);
+        valorActual = wordle.obtenerCategoriaUCB();
+        valorEsperado = ["LOBO", "LIBRO", "LLAVE", "CATO"]
+        expect(valorActual).toContain(nuevaPalabra);
+        expect(valorActual).toEqual(valorEsperado);
+    });
 })
