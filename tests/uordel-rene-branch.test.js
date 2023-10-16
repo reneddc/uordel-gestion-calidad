@@ -1,48 +1,73 @@
 import funcionesWordle from "../src/funcionesWordle"
 
-describe("Tests Unitarios para clase funcionesWordel", () => {
+describe("(Sencillos) Tests Unitarios para clase funcionesWordel", () => {
 
     let wordle = new funcionesWordle()
+    const palabraSecreta = "HOLA";
     
     test("Método definir tamanio palabra secreta debe devolver el tamaño correcto" , () => {
-        const palabraSecreta = "HOLA";
-        const expectedValue = 4;
-        const actualValue = wordle.definirTamanioPalabraSecreta(palabraSecreta);
-        expect(actualValue).toBe(expectedValue);
+        const valorEsperado = 4;
+        const valorActual = wordle.definirTamanioPalabraSecreta(palabraSecreta);
+        expect(valorActual).toBe(valorEsperado);
     });
     
     test("Método definir lista pistas debería devolver la lista de las pistas" , () => {
-        const expectedValue = ["X", "X", "X", "X", "X", "X"];
-        const actualValue = wordle.definirListaPistas();
-        expect(actualValue).toHaveLength(6);
-        expect(actualValue).toEqual(expectedValue);
+        const valorEsperado  = ["X", "X", "X", "X", "X", "X"];
+        const valorActual = wordle.definirListaPistas();
+        expect(valorActual).toHaveLength(6);
+        expect(valorActual).toEqual(valorEsperado );
     });
 
     
     test("Método obtener pista al azar debe devolver una letra de la palabra secreta, en este caso la primera letra" , () => {
-        const palabraSecreta = "HOLA";
-        const actualValue = wordle.obtenerPistaAlAzar(palabraSecreta);
-        const expectedValue = "H";
-        expect(actualValue).toBe(expectedValue);
-        expect(palabraSecreta).toContain(actualValue);
+        const valorActual = wordle.obtenerPistaAlAzar(palabraSecreta);
+        const valorEsperado = "H";
+        expect(valorActual).toBe(valorEsperado);
+        expect(palabraSecreta).toContain(valorActual);
     });
 
     test("Método obtener posicion pista al azar debe devolver un valor random entre los rangos de 0 al tamaño de la palabra secreta menos 1" , () => {
-        const palabraSecreta = "HOLA";
-        const actualValue = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
-        expect(actualValue).toBeGreaterThanOrEqual(0);
-        expect(actualValue).toBeLessThanOrEqual(3);
-        const secondActualValue = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
-        expect(secondActualValue).toBeGreaterThanOrEqual(0);
-        expect(secondActualValue).toBeLessThanOrEqual(3);
+        const valorActual = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
+        expect(valorActual).toBeGreaterThanOrEqual(0);
+        expect(valorActual).toBeLessThanOrEqual(3);
+        const segundoValorActual = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
+        expect(segundoValorActual).toBeGreaterThanOrEqual(0);
+        expect(segundoValorActual).toBeLessThanOrEqual(3);
 
         //expect(secondActualValue).not.toBe(actualValue);
     });
 
     test("Método definir historial de intentos debe devolver la lista de los intentos" , () => {
-        const expectedValue = ["X", "X", "X", "X", "X", "X"];
-        const actualValue = wordle.definirHistorialIntentos();
-        expect(actualValue).toHaveLength(6);
-        expect(actualValue).toEqual(expectedValue);
+        const valorEsperado = ["X", "X", "X", "X", "X", "X"];
+        const valorActual = wordle.definirHistorialIntentos();
+        expect(valorActual).toHaveLength(6);
+        expect(valorActual).toEqual(valorEsperado);
     });
+})
+
+describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
+
+    let wordleLimpio = new funcionesWordle();
+    let wordle = new funcionesWordle();
+    const palabraSecreta = "HOLA";
+    let palabrasSeleccionables;
+    let valorActual;
+    let valorEsperado;
+
+    beforeEach(() => {
+        palabrasSeleccionables = wordleLimpio.obtenerListaPalabras();
+        valorActual = null;
+        valorEsperado = null;
+    });
+    
+    test("En el método definir palabra secreta si ingreso una palabra que no existe, debería agregarse la palabra a la lista de palabras existentes y devolverla" , () => {
+        let nuevaPalabra = "ASUS";
+        expect(palabrasSeleccionables).not.toContain(nuevaPalabra);
+        valorEsperado = "ASUS";
+        valorActual = wordle.definirPalabraSecreta(nuevaPalabra);
+        palabrasSeleccionables = wordle.obtenerListaPalabras();
+        expect(palabrasSeleccionables).toContain(nuevaPalabra);
+        expect(valorActual).toBe(valorEsperado);
+    });
+
 })
