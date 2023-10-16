@@ -111,7 +111,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(cadenaResultado).not.toContain("z");
     });
 
-    test("En el método definir cadena resultado debe modificar los atributos de la cadenaResultado y sus similares si ya no hay más intentos disponibles" , () => {
+    test("En el método definir cadena resultado debe modificar los atributos de la cadenaResultado y sus similares si aún hay intentos disponibles" , () => {
         const intento = "PALO";
         wordle.limpiarListaIntentos();
         wordle.definirIntento(intento,4);
@@ -123,5 +123,34 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         let listaPistaEsperada = ['oaza', 'X', 'X', 'X', 'X', 'X'];
         expect(cadenaResultadoActual).toBe(cadenaResultadoEsperada);
         expect(listaPistasActual).toEqual(listaPistaEsperada);
+    });
+
+    test("En el método definir cadena resultado debe modificar los atributos de la cadenaResultado y sus similares si ya no hay más intentos disponibles" , () => {
+        let intento = "PALO";
+        wordle.limpiarListaIntentos();
+        let listaPistas= wordle.definirListaPistas();
+        listaPistas.forEach((pista) => {
+            wordle.definirIntento(intento,4);
+            wordle.definirCadenaResultado(palabraSecreta, intento);
+        });
+        intento = "HOJA";
+        wordle.definirCadenaResultado(palabraSecreta, intento);
+        let cadenaResultadoActual = wordle.obtenerCadenaResultado();
+        let listaPistasActual = wordle.definirListaPistas();
+        expect(cadenaResultadoActual).not.toBe("HOJA");
+        expect(listaPistasActual).not.toContain("HOJA");
+    });
+
+    test("En el método definir resultado juego debe devolver PERDEDOR si el intento no es igual a la palabra secreta y ya no hay más intentos (6)" , () => {
+        let intento = "PALO";
+        wordle.limpiarListaIntentos();
+        let listaPistas= wordle.definirListaPistas();
+        listaPistas.forEach((pista) => {
+            wordle.definirIntento(intento,4);
+            wordle.definirCadenaResultado(palabraSecreta, intento);
+        });
+        valorActual = wordle.definirResultadoJuego(intento,palabraSecreta);
+        valorEsperado = "Perdedor";
+        expect(valorActual).toBe(valorEsperado);
     });
 })
