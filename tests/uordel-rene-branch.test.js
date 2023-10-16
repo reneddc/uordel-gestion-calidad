@@ -70,4 +70,12 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(valorActual).toBe(valorEsperado);
     });
 
+    test("En el método definir palabra secreta si ingreso una palabra que existe, NO debería agregarse la palabra a la lista de palabras existentes y debe devolverla" , () => {
+        expect(palabrasSeleccionables).toContain(palabraSecreta);
+        valorEsperado = palabraSecreta;
+        valorActual = wordle.definirPalabraSecreta(palabraSecreta);
+        expect(valorActual).toBe(valorEsperado);
+    });
+
+
 })
