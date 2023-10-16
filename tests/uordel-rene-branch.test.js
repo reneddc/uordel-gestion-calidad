@@ -188,14 +188,16 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
     let wordle = new funcionesWordle();
     let valorActual;
     let valorEsperado;
+    let nuevaPalabra;
 
     beforeEach(() => {
         valorActual = null;
         valorEsperado = null;
+        nuevaPalabra = null;
     });
     
-    /*test("En el método definir categorias debe modificar la categoría DEPORTES" , () => {
-        let nuevaPalabra = "GOL";
+    test("En el método definir categorias debe modificar la categoría DEPORTES" , () => {
+        nuevaPalabra = "GOL";
         let categoria = ["Deporte"]
         wordle.definirNuevaPalabra(nuevaPalabra);
         wordle.definirCategorias(categoria);
@@ -206,7 +208,7 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
     });
 
     test("En el método definir categorias debe modificar la categoría UCB" , () => {
-        let nuevaPalabra = "CATO";
+        nuevaPalabra = "CATO";
         let categoria = ["UCB"]
         wordle.definirNuevaPalabra(nuevaPalabra);
         wordle.definirCategorias(categoria);
@@ -214,16 +216,28 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
         valorEsperado = ["LOBO", "LIBRO", "LLAVE", "CATO"]
         expect(valorActual).toContain(nuevaPalabra);
         expect(valorActual).toEqual(valorEsperado);
-    });*/
+    });
 
     test("En el método definir categorias debe modificar la categoría SISTEMAS" , () => {
-        let nuevaPalabra = "CATO";
+        nuevaPalabra = "COMPU";
         let categoria = ["Sistemas"]
         wordle.definirNuevaPalabra(nuevaPalabra);
         wordle.definirCategorias(categoria);
         valorActual = wordle.obtenerCategoriaSistemas();
-        valorEsperado = ["HOLA", "PERO", "CATO"]
+        valorEsperado = ["HOLA", "PERO", "COMPU"]
         expect(valorActual).toContain(nuevaPalabra);
         expect(valorActual).toEqual(valorEsperado);
+    });
+
+    test("En el método definir categorias debe modificar la categoría SISTEMAS" , () => {
+        nuevaPalabra = "ALGO";
+        let categoria = []
+        wordle.definirNuevaPalabra(nuevaPalabra);
+        wordle.definirCategorias(categoria);
+        let valorActualSistemas = wordle.obtenerCategoriaSistemas();
+        let valorEsperadoSistemas = ["HOLA", "PERO", "COMPU"]
+        expect(valorActualSistemas).not.toContain(nuevaPalabra);
+        expect(valorActualSistemas).toEqual(valorEsperadoSistemas);
+        expect(valorActualSistemas).toHaveLength(3);
     });
 })

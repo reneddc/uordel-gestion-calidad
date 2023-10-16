@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.27% </span>
+                <span class="strong">75.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>78/111</span>
+                <span class='fraction'>84/111</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.74% </span>
+                <span class="strong">74.19% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>21/31</span>
+                <span class='fraction'>23/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.75% </span>
+                <span class="strong">89.65% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>24/29</span>
+                <span class='fraction'>26/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.19% </span>
+                <span class="strong">74.03% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>73/104</span>
+                <span class='fraction'>77/104</span>
             </div>
         
             
@@ -306,11 +306,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -324,11 +324,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -387,15 +387,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -534,8 +534,8 @@ class FuncionesWordle{
         let palabra = this.palabrasSeleccionables[this.tamPalabrasSeleccionables - 1];
         for(let i = 0; i &lt; categoria.length; i++){
             switch(categoria[i]){
-<span class="branch-0 cbranch-no" title="branch not covered" >                case "Deporte":<span class="cstat-no" title="statement not covered" >this.categoriaDeporte.push(palabra);<span class="cstat-no" title="statement not covered" >b</span>reak;</span></span>
-<span class="branch-1 cbranch-no" title="branch not covered" >                case "UCB":<span class="cstat-no" title="statement not covered" >this.categoriaUCB.push(palabra);<span class="cstat-no" title="statement not covered" >b</span>reak;</span></span>
+                case "Deporte":this.categoriaDeporte.push(palabra);break;
+                case "UCB":this.categoriaUCB.push(palabra);break;
                 case "Sistemas":this.categoriaSistemas.push(palabra);break;
             }
         }
@@ -611,12 +611,12 @@ class FuncionesWordle{
         return this.palabrasSeleccionables;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    ob</span>tenerCategoriaDeporte(){
-<span class="cstat-no" title="statement not covered" >        return this.categoriaDeporte;</span>
+    obtenerCategoriaDeporte(){
+        return this.categoriaDeporte;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    ob</span>tenerCategoriaUCB(){
-<span class="cstat-no" title="statement not covered" >        return this.categoriaUCB;</span>
+    obtenerCategoriaUCB(){
+        return this.categoriaUCB;
     }
 &nbsp;
     obtenerCategoriaSistemas(){
@@ -745,7 +745,7 @@ export default FuncionesWordle;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-16T21:14:24.691Z
+                at 2023-10-16T21:21:40.714Z
             </div>
         <script src="prettify.js"></script>
         <script>
