@@ -110,4 +110,18 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(cadenaResultado).toHaveLength(0);
         expect(cadenaResultado).not.toContain("z");
     });
+
+    test("En el método definir cadena resultado debe modificar los atributos de la cadenaResultado y sus similares si ya no hay más intentos disponibles" , () => {
+        const intento = "PALO";
+        wordle.limpiarListaIntentos();
+        wordle.definirIntento(intento,4);
+        wordle.definirCadenaResultado(palabraSecreta, intento);
+        let cadenaResultadoActual = wordle.obtenerCadenaResultado();
+        let listaPistasActual = wordle.definirListaPistas();
+        console.log(listaPistasActual);
+        let cadenaResultadoEsperada = "oaza";
+        let listaPistaEsperada = ['oaza', 'X', 'X', 'X', 'X', 'X'];
+        expect(cadenaResultadoActual).toBe(cadenaResultadoEsperada);
+        expect(listaPistasActual).toEqual(listaPistaEsperada);
+    });
 })
