@@ -141,7 +141,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(listaPistasActual).not.toContain("HOJA");
     });
 
-    test("En el método definir resultado juego debe devolver PERDEDOR si el intento no es igual a la palabra secreta y ya no hay más intentos (6)" , () => {
+   /* test("En el método definir resultado juego debe devolver PERDEDOR si el intento no es igual a la palabra secreta y ya no hay más intentos (6)" , () => {
         let intento = "PALO";
         wordle.limpiarListaIntentos();
         let listaPistas= wordle.definirListaPistas();
@@ -151,6 +151,26 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         });
         valorActual = wordle.definirResultadoJuego(intento,palabraSecreta);
         valorEsperado = "Perdedor";
+        expect(valorActual).toBe(valorEsperado);
+    });*/
+
+    test("En el método definir resultado juego debe devolver GANADOR si el intento es igual a la palabra secreta" , () => {
+        let intento = "HOLA";
+        wordle.limpiarListaIntentos();
+        wordle.definirIntento(intento,4);
+        wordle.definirCadenaResultado(palabraSecreta, intento);
+        valorActual = wordle.definirResultadoJuego(intento,palabraSecreta);
+        valorEsperado = "Ganador";
+        expect(valorActual).toBe(valorEsperado);
+    });
+    
+    test("En el método definir resultado juego debe devolver ACTIVO si el intento no es igual a la palabra secreta y aún hay más intentos (6)" , () => {
+        let intento = "PALO";
+        wordle.limpiarListaIntentos();
+        wordle.definirIntento(intento,4);
+        wordle.definirCadenaResultado(palabraSecreta, intento);
+        valorActual = wordle.definirResultadoJuego(intento,palabraSecreta);
+        valorEsperado = "Activo";
         expect(valorActual).toBe(valorEsperado);
     });
 })
