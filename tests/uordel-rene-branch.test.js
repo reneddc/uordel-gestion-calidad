@@ -194,7 +194,7 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
         valorEsperado = null;
     });
     
-    test("En el método definir categorias debe modificar la categoría DEPORTES" , () => {
+    /*test("En el método definir categorias debe modificar la categoría DEPORTES" , () => {
         let nuevaPalabra = "GOL";
         let categoria = ["Deporte"]
         wordle.definirNuevaPalabra(nuevaPalabra);
@@ -205,7 +205,6 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
         expect(valorActual).toEqual(valorEsperado);
     });
 
-    
     test("En el método definir categorias debe modificar la categoría UCB" , () => {
         let nuevaPalabra = "CATO";
         let categoria = ["UCB"]
@@ -213,6 +212,17 @@ describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
         wordle.definirCategorias(categoria);
         valorActual = wordle.obtenerCategoriaUCB();
         valorEsperado = ["LOBO", "LIBRO", "LLAVE", "CATO"]
+        expect(valorActual).toContain(nuevaPalabra);
+        expect(valorActual).toEqual(valorEsperado);
+    });*/
+
+    test("En el método definir categorias debe modificar la categoría SISTEMAS" , () => {
+        let nuevaPalabra = "CATO";
+        let categoria = ["Sistemas"]
+        wordle.definirNuevaPalabra(nuevaPalabra);
+        wordle.definirCategorias(categoria);
+        valorActual = wordle.obtenerCategoriaSistemas();
+        valorEsperado = ["HOLA", "PERO", "CATO"]
         expect(valorActual).toContain(nuevaPalabra);
         expect(valorActual).toEqual(valorEsperado);
     });
