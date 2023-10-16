@@ -49,7 +49,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
 
     let wordleLimpio = new funcionesWordle();
     let wordle = new funcionesWordle();
-    const palabraSecreta = "HOLA";
+    let palabraSecreta;
     let palabrasSeleccionables;
     let valorActual;
     let valorEsperado;
@@ -60,6 +60,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         valorActual = null;
         valorEsperado = null;
         cadenaResultado = [];
+        palabraSecreta = "HOLA"
     });
     
     test("En el método definir palabra secreta si ingreso una palabra que no existe, debería agregarse la palabra a la lista de palabras existentes y devolverla" , () => {
@@ -82,8 +83,8 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
     test("En el método definir azules, debe modificar los arrays CadenaResultado y copiaPalabraSecreta si hay azules en la palabra" , () => {
         const intento = "HOJA";
         wordle.generarResultadoVacio(4);
-        cadenaResultado = wordle.obtenerCadenaResultado();
         wordle.definirAzules(palabraSecreta,intento);
+        cadenaResultado = wordle.obtenerCadenaResultado();
         expect(cadenaResultado).toContain("z");
         expect(cadenaResultado[0]).toMatch(/z/);
     });
@@ -91,14 +92,22 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
     test("En el método definir azules, no debe modificar los arrays CadenaResultado y copiaPalabraSecreta porque no hay azules en la palabra" , () => {
         const intento = "UBER";
         wordle.generarResultadoVacio(4);
-        cadenaResultado = wordle.obtenerCadenaResultado();
         wordle.definirAzules(palabraSecreta,intento);
+        cadenaResultado = wordle.obtenerCadenaResultado();
         expect(cadenaResultado).not.toContain("z");
         cadenaResultado.forEach((cadena) => {
             expect(cadena).not.toMatch(/z/);
+            expect(cadena).toMatch(/o/);
         });
     });
 
-
-
+    test("En el método definir azules, no debe modificar los arrays CadenaResultado y copiaPalabraSecreta porque la palabra secreta estña vacía" , () => {
+        const intento = "HOJA";
+        palabraSecreta = "";
+        wordle.generarResultadoVacio(palabraSecreta.length);
+        wordle.definirAzules(palabraSecreta,intento);
+        cadenaResultado = wordle.obtenerCadenaResultado();
+        expect(cadenaResultado).toHaveLength(0);
+        expect(cadenaResultado).not.toContain("z");
+    });
 })
