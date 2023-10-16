@@ -2,32 +2,40 @@ import funcionesWordle from "../src/funcionesWordle"
 
 describe("(Sencillos) Tests Unitarios para clase funcionesWordel", () => {
 
-    let wordle = new funcionesWordle()
-    const palabraSecreta = "HOLA";
+    let wordle = new funcionesWordle();
+    let valorActual;
+    let valorEsperado;
+    let palabraSecreta;
+
+    beforeEach(() => {
+        valorActual = null;
+        valorEsperado = null;
+        palabraSecreta = "HOLA"
+    });
     
     test("Método definir tamanio palabra secreta debe devolver el tamaño correcto" , () => {
-        const valorEsperado = 4;
-        const valorActual = wordle.definirTamanioPalabraSecreta(palabraSecreta);
+        valorEsperado = 4;
+        valorActual = wordle.definirTamanioPalabraSecreta(palabraSecreta);
         expect(valorActual).toBe(valorEsperado);
     });
     
     test("Método definir lista pistas debería devolver la lista de las pistas" , () => {
-        const valorEsperado  = ["X", "X", "X", "X", "X", "X"];
-        const valorActual = wordle.definirListaPistas();
+        valorEsperado  = ["X", "X", "X", "X", "X", "X"];
+        valorActual = wordle.definirListaPistas();
         expect(valorActual).toHaveLength(6);
         expect(valorActual).toEqual(valorEsperado );
     });
 
     
     test("Método obtener pista al azar debe devolver una letra de la palabra secreta, en este caso la primera letra" , () => {
-        const valorActual = wordle.obtenerPistaAlAzar(palabraSecreta);
-        const valorEsperado = "H";
+        valorActual = wordle.obtenerPistaAlAzar(palabraSecreta);
+        valorEsperado = "H";
         expect(valorActual).toBe(valorEsperado);
         expect(palabraSecreta).toContain(valorActual);
     });
 
     test("Método obtener posicion pista al azar debe devolver un valor random entre los rangos de 0 al tamaño de la palabra secreta menos 1" , () => {
-        const valorActual = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
+        valorActual = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
         expect(valorActual).toBeGreaterThanOrEqual(0);
         expect(valorActual).toBeLessThanOrEqual(3);
         const segundoValorActual = wordle.obtenerPosicionPistaAlAzar(palabraSecreta)
@@ -38,12 +46,13 @@ describe("(Sencillos) Tests Unitarios para clase funcionesWordel", () => {
     });
 
     test("Método definir historial de intentos debe devolver la lista de los intentos" , () => {
-        const valorEsperado = ["X", "X", "X", "X", "X", "X"];
-        const valorActual = wordle.definirHistorialIntentos();
+        valorEsperado = ["X", "X", "X", "X", "X", "X"];
+        valorActual = wordle.definirHistorialIntentos();
         expect(valorActual).toHaveLength(6);
         expect(valorActual).toEqual(valorEsperado);
     });
 })
+
 
 describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
 
@@ -118,7 +127,6 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         wordle.definirCadenaResultado(palabraSecreta, intento);
         let cadenaResultadoActual = wordle.obtenerCadenaResultado();
         let listaPistasActual = wordle.definirListaPistas();
-        console.log(listaPistasActual);
         let cadenaResultadoEsperada = "oaza";
         let listaPistaEsperada = ['oaza', 'X', 'X', 'X', 'X', 'X'];
         expect(cadenaResultadoActual).toBe(cadenaResultadoEsperada);
@@ -141,7 +149,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         expect(listaPistasActual).not.toContain("HOJA");
     });
 
-   /* test("En el método definir resultado juego debe devolver PERDEDOR si el intento no es igual a la palabra secreta y ya no hay más intentos (6)" , () => {
+    test("En el método definir resultado juego debe devolver PERDEDOR si el intento no es igual a la palabra secreta y ya no hay más intentos (6)" , () => {
         let intento = "PALO";
         wordle.limpiarListaIntentos();
         let listaPistas= wordle.definirListaPistas();
@@ -152,7 +160,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         valorActual = wordle.definirResultadoJuego(intento,palabraSecreta);
         valorEsperado = "Perdedor";
         expect(valorActual).toBe(valorEsperado);
-    });*/
+    });
 
     test("En el método definir resultado juego debe devolver GANADOR si el intento es igual a la palabra secreta" , () => {
         let intento = "HOLA";
@@ -163,7 +171,7 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         valorEsperado = "Ganador";
         expect(valorActual).toBe(valorEsperado);
     });
-    
+
     test("En el método definir resultado juego debe devolver ACTIVO si el intento no es igual a la palabra secreta y aún hay más intentos (6)" , () => {
         let intento = "PALO";
         wordle.limpiarListaIntentos();
@@ -172,5 +180,28 @@ describe("(Medio) Tests Unitarios para clase funcionesWordel", () => {
         valorActual = wordle.definirResultadoJuego(intento,palabraSecreta);
         valorEsperado = "Activo";
         expect(valorActual).toBe(valorEsperado);
+    });
+})
+
+describe("(Alto) Tests Unitarios para clase funcionesWordel", () => {
+
+    let wordle = new funcionesWordle();
+    let valorActual;
+    let valorEsperado;
+
+    beforeEach(() => {
+        valorActual = null;
+        valorEsperado = null;
+    });
+    
+    test("En el método definir categorias debe modificar la categoría DEPORTES" , () => {
+        let nuevaPalabra = "GOL";
+        let categoria = ["Deporte"]
+        wordle.definirNuevaPalabra(nuevaPalabra);
+        wordle.definirCategorias(categoria);
+        valorActual = wordle.obtenerCategoriaDeporte();
+        valorEsperado = ["MESSI", "BALON", "DUKE", "CINCO", "GOL"]
+        expect(valorActual).toContain(nuevaPalabra);
+        expect(valorActual).toEqual(valorEsperado);
     });
 })
