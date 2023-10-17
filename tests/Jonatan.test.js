@@ -55,18 +55,27 @@ describe('FuncionesWordle', () => {
       expect(funcionesWordle.tamPalabrasSeleccionables).toBe(17); 
     });
 
-    it('debería manejar la excepción y retornar el mensaje correcto al agregar una palabra existente', () => {
+    it('deberia manejar la excepción y retornar el mensaje correcto al agregar una palabra existente', () => {
       const funcionesWordle = new FuncionesWordle();
       const resultado = funcionesWordle.agregarNuevaPalabra('HOJA');
       expect(resultado).toBe('Ya existe esa palabra.');
       expect(funcionesWordle.palabrasSeleccionables).toContain('HOJA');
     });
 
-    it('debería agregar correctamente una palabra nueva y retornar la palabra', () => {
+    it('deberia agregar correctamente una palabra nueva y retornar la palabra', () => {
       const funcionesWordle = new FuncionesWordle();
       const resultado = funcionesWordle.agregarNuevaPalabra('NUEVA');
       expect(resultado).toBe('NUEVA');
       expect(funcionesWordle.palabrasSeleccionables).toContain('NUEVA');
+    });
+
+    it("no deberia marcarse como amarilla si no está en la palabra secreta ", () => {
+      const funcionesWordle = new FuncionesWordle();
+      funcionesWordle.cadenaResultado = ['X', 'X', 'X', 'X', 'X', 'X'];
+      funcionesWordle.copiaPalabraSecreta = ['H', 'O', 'J', 'A'];
+  
+      funcionesWordle.definirAmarillas(['H', 'O', 'J', 'A'], ['H', 'X', 'X', 'A']);
+      expect(funcionesWordle.cadenaResultado).toEqual(['a', 'X', 'X', 'a', 'X', 'X']);
     });
 
   });

@@ -171,7 +171,7 @@ class FuncionesWordle{
         for(let i = 0; i < palabraSecreta.length; i++){
             pos = this.copiaPalabraSecreta.indexOf(intento[i]);
             if(this.cadenaResultado[i] != "z" && pos != -1){
-                this.cadenaResultado[i] = "a";
+                this.cadenaResultado[i] = "a";  
                 this.copiaPalabraSecreta[pos] = ".";
             }
         }
