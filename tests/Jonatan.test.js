@@ -100,4 +100,11 @@ describe('FuncionesWordle', () => {
       funcionesWordle.definirAmarillas([], []);
       expect(funcionesWordle.cadenaResultado).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
     });
+
+    it("deberia devolver una palabra al azar del array de categoria deportes", () => {
+      const funcionesWordle = new FuncionesWordle();
+      const palabraSec = funcionesWordle.definirPalabraSecretaAlAzar("Deporte");
+     
+      expect(funcionesWordle.categoriaDeporte).toContain(palabraSec);
+    });
   });
