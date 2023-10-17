@@ -84,5 +84,13 @@ describe('FuncionesWordle', () => {
       funcionesWordle.definirAmarillas(['H', 'O', 'J', 'A'], ['Y', 'Z', 'W', 'X']);
       expect(funcionesWordle.cadenaResultado).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
     });
-   
+    it("deberia devolver la misma cadena resultado y se mantiene sin cambios", () => {
+      const funcionesWordle = new FuncionesWordle();
+      funcionesWordle.cadenaResultado = ['z', 'z', 'z', 'z', 'z', 'z'];
+      funcionesWordle.copiaPalabraSecreta = ['H', 'O', 'J', 'A'];
+    
+      funcionesWordle.definirAmarillas(['H', 'O', 'J', 'A'], ['X', 'Y', 'W', 'X']);
+    
+      expect(funcionesWordle.cadenaResultado).toEqual(['z', 'z', 'z', 'z', 'z', 'z']);
+    });
   });
