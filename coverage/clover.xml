@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1697519930705" clover="3.2.0">
-  <project timestamp="1697519930705" name="All files">
+<coverage generated="1697520137372" clover="3.2.0">
+  <project timestamp="1697520137372" name="All files">
     <metrics statements="105" coveredstatements="31" conditionals="31" coveredconditionals="8" methods="30" coveredmethods="10" elements="166" coveredelements="49" complexity="0" loc="105" ncloc="105" packages="1" files="2" classes="2"/>
     <file name="ExcepcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\ExcepcionesWordle.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -8,17 +8,17 @@
     </file>
     <file name="funcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\funcionesWordle.js">
       <metrics statements="104" coveredstatements="30" conditionals="31" coveredconditionals="8" methods="29" coveredmethods="9"/>
-      <line num="5" count="13" type="stmt"/>
-      <line num="6" count="13" type="stmt"/>
-      <line num="7" count="13" type="stmt"/>
-      <line num="8" count="13" type="stmt"/>
-      <line num="9" count="13" type="stmt"/>
-      <line num="10" count="13" type="stmt"/>
-      <line num="11" count="13" type="stmt"/>
-      <line num="12" count="13" type="stmt"/>
-      <line num="13" count="13" type="stmt"/>
-      <line num="14" count="13" type="stmt"/>
-      <line num="15" count="13" type="stmt"/>
+      <line num="5" count="14" type="stmt"/>
+      <line num="6" count="14" type="stmt"/>
+      <line num="7" count="14" type="stmt"/>
+      <line num="8" count="14" type="stmt"/>
+      <line num="9" count="14" type="stmt"/>
+      <line num="10" count="14" type="stmt"/>
+      <line num="11" count="14" type="stmt"/>
+      <line num="12" count="14" type="stmt"/>
+      <line num="13" count="14" type="stmt"/>
+      <line num="14" count="14" type="stmt"/>
+      <line num="15" count="14" type="stmt"/>
       <line num="19" count="0" type="stmt"/>
       <line num="20" count="0" type="stmt"/>
       <line num="21" count="0" type="cond" truecount="0" falsecount="3"/>
@@ -88,7 +88,7 @@
       <line num="162" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="163" count="0" type="stmt"/>
       <line num="164" count="0" type="stmt"/>
-      <line num="171" count="3" type="stmt"/>
+      <line num="171" count="4" type="stmt"/>
       <line num="172" count="12" type="stmt"/>
       <line num="173" count="12" type="cond" truecount="4" falsecount="0"/>
       <line num="174" count="2" type="stmt"/>

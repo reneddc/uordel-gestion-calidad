@@ -93,4 +93,11 @@ describe('FuncionesWordle', () => {
     
       expect(funcionesWordle.cadenaResultado).toEqual(['z', 'z', 'z', 'z', 'z', 'z']);
     });
+    it("deberia devolver la mismca cadena resultado sin entradas", () => {
+      const funcionesWordle = new FuncionesWordle();
+      funcionesWordle.cadenaResultado = ['X', 'X', 'X', 'X', 'X', 'X'];
+      funcionesWordle.copiaPalabraSecreta = ['H', 'O', 'J', 'A'];
+      funcionesWordle.definirAmarillas([], []);
+      expect(funcionesWordle.cadenaResultado).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
+    });
   });
