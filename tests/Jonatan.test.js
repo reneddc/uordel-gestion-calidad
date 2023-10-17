@@ -119,4 +119,9 @@ describe('FuncionesWordle', () => {
      
       expect(funcionesWordle.categoriaSistemas).toContain(palabraSec);
     });
+    it("deberia devolver una palabra al azar del array de categoria que no existe", () => {
+      const funcionesWordle = new FuncionesWordle();
+      const palabraSec = funcionesWordle.definirPalabraSecretaAlAzar("CualquierCategoriaQueNoExiste");
+      expect(funcionesWordle.palabrasSeleccionables).toContain(palabraSec);
+    });
   });
