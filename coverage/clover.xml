@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1697560200518" clover="3.2.0">
-  <project timestamp="1697560200518" name="All files">
-    <metrics statements="105" coveredstatements="45" conditionals="31" coveredconditionals="10" methods="30" coveredmethods="12" elements="166" coveredelements="67" complexity="0" loc="105" ncloc="105" packages="1" files="2" classes="2"/>
+<coverage generated="1697560279813" clover="3.2.0">
+  <project timestamp="1697560279813" name="All files">
+    <metrics statements="105" coveredstatements="48" conditionals="31" coveredconditionals="11" methods="30" coveredmethods="12" elements="166" coveredelements="71" complexity="0" loc="105" ncloc="105" packages="1" files="2" classes="2"/>
     <file name="ExcepcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\ExcepcionesWordle.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="3" count="2" type="stmt"/>
     </file>
     <file name="funcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\funcionesWordle.js">
-      <metrics statements="104" coveredstatements="44" conditionals="31" coveredconditionals="10" methods="29" coveredmethods="11"/>
-      <line num="5" count="16" type="stmt"/>
-      <line num="6" count="16" type="stmt"/>
-      <line num="7" count="16" type="stmt"/>
-      <line num="8" count="16" type="stmt"/>
-      <line num="9" count="16" type="stmt"/>
-      <line num="10" count="16" type="stmt"/>
-      <line num="11" count="16" type="stmt"/>
-      <line num="12" count="16" type="stmt"/>
-      <line num="13" count="16" type="stmt"/>
-      <line num="14" count="16" type="stmt"/>
-      <line num="15" count="16" type="stmt"/>
+      <metrics statements="104" coveredstatements="47" conditionals="31" coveredconditionals="11" methods="29" coveredmethods="11"/>
+      <line num="5" count="17" type="stmt"/>
+      <line num="6" count="17" type="stmt"/>
+      <line num="7" count="17" type="stmt"/>
+      <line num="8" count="17" type="stmt"/>
+      <line num="9" count="17" type="stmt"/>
+      <line num="10" count="17" type="stmt"/>
+      <line num="11" count="17" type="stmt"/>
+      <line num="12" count="17" type="stmt"/>
+      <line num="13" count="17" type="stmt"/>
+      <line num="14" count="17" type="stmt"/>
+      <line num="15" count="17" type="stmt"/>
       <line num="19" count="0" type="stmt"/>
       <line num="20" count="0" type="stmt"/>
       <line num="21" count="0" type="cond" truecount="0" falsecount="3"/>
@@ -37,31 +37,31 @@
       <line num="48" count="2" type="stmt"/>
       <line num="50" count="1" type="stmt"/>
       <line num="52" count="2" type="stmt"/>
-      <line num="56" count="2" type="stmt"/>
-      <line num="57" count="2" type="stmt"/>
-      <line num="58" count="2" type="stmt"/>
-      <line num="59" count="2" type="cond" truecount="2" falsecount="2"/>
+      <line num="56" count="3" type="stmt"/>
+      <line num="57" count="3" type="stmt"/>
+      <line num="58" count="3" type="stmt"/>
+      <line num="59" count="3" type="cond" truecount="3" falsecount="1"/>
       <line num="61" count="1" type="stmt"/>
       <line num="62" count="1" type="stmt"/>
       <line num="63" count="1" type="stmt"/>
       <line num="65" count="1" type="stmt"/>
       <line num="66" count="1" type="stmt"/>
       <line num="67" count="1" type="stmt"/>
-      <line num="69" count="0" type="stmt"/>
-      <line num="70" count="0" type="stmt"/>
-      <line num="71" count="0" type="stmt"/>
+      <line num="69" count="1" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
       <line num="73" count="0" type="stmt"/>
       <line num="74" count="0" type="stmt"/>
       <line num="75" count="0" type="stmt"/>
-      <line num="77" count="2" type="stmt"/>
+      <line num="77" count="3" type="stmt"/>
       <line num="81" count="0" type="stmt"/>
       <line num="82" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="83" count="0" type="stmt"/>
       <line num="84" count="0" type="stmt"/>
       <line num="86" count="0" type="stmt"/>
-      <line num="90" count="2" type="stmt"/>
-      <line num="91" count="2" type="stmt"/>
-      <line num="92" count="2" type="stmt"/>
+      <line num="90" count="3" type="stmt"/>
+      <line num="91" count="3" type="stmt"/>
+      <line num="92" count="3" type="stmt"/>
       <line num="96" count="2" type="stmt"/>
       <line num="100" count="1" type="stmt"/>
       <line num="104" count="0" type="stmt"/>
