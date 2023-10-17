@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1697561033969" clover="3.2.0">
-  <project timestamp="1697561033969" name="All files">
+<coverage generated="1697561282577" clover="3.2.0">
+  <project timestamp="1697561282578" name="All files">
     <metrics statements="105" coveredstatements="51" conditionals="31" coveredconditionals="12" methods="30" coveredmethods="12" elements="166" coveredelements="75" complexity="0" loc="105" ncloc="105" packages="1" files="2" classes="2"/>
     <file name="ExcepcionesWordle.js" path="C:\Users\jonat\uordel\uordel-gestion-calidad\src\ExcepcionesWordle.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
