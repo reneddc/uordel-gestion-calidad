@@ -107,4 +107,10 @@ describe('FuncionesWordle', () => {
      
       expect(funcionesWordle.categoriaDeporte).toContain(palabraSec);
     });
+    it("deberia devolver una palabra al azar del array de categoria deportes", () => {
+      const funcionesWordle = new FuncionesWordle();
+      const palabraSec = funcionesWordle.definirPalabraSecretaAlAzar("UCB");
+     
+      expect(funcionesWordle.categoriaUCB).toContain(palabraSec);
+    });
   });
