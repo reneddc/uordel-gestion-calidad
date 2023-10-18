@@ -1,24 +1,24 @@
 <html>
   <head>
-      <script src="/index.87ae31f1.js" defer=""></script>
-      <script type="text/javascript">function movetoNext(current, nextFieldID) {
-    if (current.value.length >= current.maxLength) document.getElementById(nextFieldID).focus();
-}
-
-</script>
+      <script type="module" src="/presenter.463783b4.js"></script>
+      <script>function movetoNext(current, nextFieldID) {
+  if (current.value.length >= current.maxLength) {
+    document.getElementById(nextFieldID).focus();
+  }
+}</script>
       
-      <link rel="stylesheet" href="/index.3b4229aa.css">
-  </head>
+      <link rel="stylesheet" href="/styleUordel.0007ba95.css">
+  <script src="/styleUordel.0007ba95.js"></script></head>
 
   <body>
 
   <!-------------------------------------------NAVIGATOR-------------------------------------------------->
-  <div id="navigator" style="display: none">
+  <div id="navigator" style="display:none;">
     <div id="contenedor-navigator">
       <form id="boton-volver-form">
         <input type="submit" value="VOLVER" id="boton-volver-vista-principal" class="submit">
       </form>
-      <img id="logo-vista-principal" src="/UORDEL%20Logo%20Navigator.9623205e.png" alt="Logo_UORDEL" height="100px">
+      <img id="logo-vista-principal" src="/UORDEL Logo Navigator.faec6d7a.png" alt="Logo_UORDEL" height="100px">
     </div>
   </div>
 
@@ -27,7 +27,7 @@
   <div id="vista-Principal">
 
     <div id="contenedor-vista-principal">
-        <img id="logo-vista-principal" src="/UORDEL%20Logo.5fb4fdda.png" alt="Logo_UORDEL" width="600 px" height="600px">
+        <img id="logo-vista-principal" src="/UORDEL Logo.219fd8b6.png" alt="Logo_UORDEL" width="600 px" height="600px">
 
         <div id="contenedor-opciones-vista-principal">
             <form id="juego-rapido-form-principal" class="opciones-vista-principal">
@@ -69,7 +69,7 @@
   <!-------------------------------------------VISTA REGISTRARSE COMO ADMIN-------------------------------------------------->
 
 
-  <div id="vista-registro-admistrador" style="display: none"> 
+  <div id="vista-registro-admistrador" style="display:none;"> 
       <h2 class="titulo-vista">REGISTRARSE EN MODO ADMINISTRADOR</h2>
       <form id="registro-admin-form">
           <label for="password-admin" class="label-input">Ingrese Contraseña: </label>
@@ -80,7 +80,7 @@
 
   <!-------------------------------------------VISTA BANCO DE PALABRAS-------------------------------------------------->
 
-  <div id="vista-banco-palabras" style="display: none"> 
+  <div id="vista-banco-palabras" style="display:none;"> 
       <h2 class="titulo-vista"> BANCO DE PALABRAS</h2>
       <form id="nueva-palabra-form">
         <label for="nueva-palabra" class="label-input">Ingrese Nueva Palabra: </label>
@@ -103,7 +103,7 @@
 
   <!-------------------------------------------VISTA CAMPO DE JUEGO-------------------------------------------------->
 
-  <div id="vista-campo-juego" style="display: none">
+  <div id="vista-campo-juego" style="display: none;">
     <div id="contenedor-campo-juego">
       <form id="historial-intentos-form"></form>
       <form id="ingresar-intento-form"></form>
@@ -115,49 +115,49 @@
 
   <!-------------------------------------------VISTA TUTORIAL-------------------------------------------------->
 
-  <div id="vista-tutorial" style="display: none">
+  <div id="vista-tutorial" style="display: none;">
     <h2 class="titulo-vista">TUTORIAL</h2>
     <div class="contenedor-tutorial">
         <li> Adivina la palabra oculta en seis intentos</li><br>
-        <img id="logo-vista-principal" src="/Campo%20de%20juego.8421454e.jpg" alt="Logo_UORDEL" height="500px"><br>
+        <img id="logo-vista-principal" src="/Campo de juego.a698e09f.jpg" alt="Logo_UORDEL" height="500px"><br>
 
         <li> Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra. </li><br>
         <li>
-          <span style="color: #004aad"> Azul</span>
+          <span style="color: rgb(0, 74, 173)"> Azul</span>
           <span>indica que la letra esta en la posicion corecta.</span>
         </li><br>
-        <img id="logo-vista-principal" src="/toros.7450130a.jpg" alt="Logo_UORDEL" height="60px"><br>
+        <img id="logo-vista-principal" src="/toros.8e5a56d1.jpg" alt="Logo_UORDEL" height="60px"><br>
 
         <li>
-          <span style="color: #f7931e">Amarillo </span>
+          <span style="color: rgb(247, 147, 30)">Amarillo </span>
           <span>indica que la letra esta en la posicion corecta. </span>
         </li><br>
-        <img id="logo-vista-principal" src="/vacas.47ce9b0e.jpg" alt="Logo_UORDEL" height="60px"><br>
+        <img id="logo-vista-principal" src="/vacas.b06465f2.jpg" alt="Logo_UORDEL" height="60px"><br>
 
         <li> En caso de no tener color la letra no se encuentra en la palabra.</li><br>
-        <img id="logo-vista-principal" src="/sin%20vacas%20y%20toros.0d40ce65.jpg" alt="Logo_UORDEL" height="60px"><br>
+        <img id="logo-vista-principal" src="/sin vacas y toros.df7f576a.jpg" alt="Logo_UORDEL" height="60px"><br>
 
     </div>
     <h4 class="titulo-pasos">Pasos del Juego</h4>
     <div class="contenedor-tutorial">
         <li> Elegir una modalidad de juego.</li><br>
-        <img id="logo-vista-principal" src="/modalidades.348d8059.jpg" alt="Logo_UORDEL" height="500px"><br>
+        <img id="logo-vista-principal" src="/modalidades.1854ad89.jpg" alt="Logo_UORDEL" height="500px"><br>
 
         <li> Ingresar una palabra real como intento.</li><br>
-        <img id="logo-vista-principal" src="/Intento.469633b5.jpg" alt="Logo_UORDEL" height="500px"><br>
+        <img id="logo-vista-principal" src="/Intento.c769f0a8.jpg" alt="Logo_UORDEL" height="500px"><br>
 
         <li> Ver las pistas del intento anterior.</li><br>
-        <img id="logo-vista-principal" src="/historial%20intentos.f07fb1ee.jpg" alt="Logo_UORDEL" height="500px"><br>
+        <img id="logo-vista-principal" src="/historial intentos.4c2bcae3.jpg" alt="Logo_UORDEL" height="500px"><br>
 
         <li> Ver una pista en caso de estar estancado</li><br>
-        <img id="logo-vista-principal" src="/pista%20letra.6b4b5ad9.jpg" alt="Logo_UORDEL" height="500px"><br>
+        <img id="logo-vista-principal" src="/pista letra.de9e431c.jpg" alt="Logo_UORDEL" height="500px"><br>
 
     </div>
   </div>
    
   <!-------------------------------------------VISTA MODALIDADES-------------------------------------------------->
 
-  <div id="vista-modalidades" style="display: none">
+  <div id="vista-modalidades" style="display: none;">
     <h2 class="titulo-vista">MODALIDADES DE JUEGO</h2><br>
     <div id="contenedor-modalidades">
         <form id="juego-rapido-form">
@@ -186,7 +186,7 @@
 
   <!-------------------------------------------VISTA PERDEDOR-------------------------------------------------->
 
-  <div id="vista-perdedor" style="display: none">
+  <div id="vista-perdedor" style="display:none;">
       <h2 class="titulo-vista"> PERDISTE JAJAJAJAJ </h2>
       <div id="contenedor-campo-juego">
           <form id="perdedor-form"></form>
@@ -203,7 +203,7 @@
 
   <!-------------------------------------------VISTA GANADOR-------------------------------------------------->
 
-  <div id="vista-ganador" style="display: none">
+  <div id="vista-ganador" style="display: none;">
       <h2 class="titulo-vista"> BUENA, GANASTE :D</h2>
       <div id="contenedor-campo-juego">
           <form id="palabra-secreta-form"></form>
