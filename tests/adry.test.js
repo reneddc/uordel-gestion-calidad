@@ -80,7 +80,7 @@ describe("generarResultadoVacio", () => {
        
     /*-------------------------------5. - obtenerCategoriaUCB---------------------------------*/
     it('debería devolver la categoría UCB', () => {
-        const categoriaUCB = 'UCB Categoría'; 
+        const categoriaUCB = 'UCB'; 
         funcionesWordle.categoriaUCB = categoriaUCB;
         const resultado = funcionesWordle.obtenerCategoriaUCB();
         expect(resultado).toBe(categoriaUCB);
@@ -95,5 +95,21 @@ describe("generarResultadoVacio", () => {
         expect(funcionesWordle.nroIntentos).toBe(nroIntentosInicial + 1);
       });
 
- 
+    /*-------------------------------7. - obtenerCadenaResultado ---------------------------------*/
+
+    it('debería devolver la cadena de resultado', () => {
+        const cadenaResultado = ['o', 'x', 'x', 'o', 'o']; // Establece la cadena de resultado deseada
+    
+        funcionesWordle.cadenaResultado = cadenaResultado;
+            const resultado = funcionesWordle.obtenerCadenaResultado();
+            expect(resultado).toEqual(cadenaResultado);
+      });
+        /*-------------------------------7. - defineNroIntents ---------------------------------*/
+
+    it('debería devolver el número de intentos', () => {
+        const nroIntentos = 5; // Establece el número de intentos deseado
+        funcionesWordle.nroIntentos = nroIntentos;
+            const resultado = funcionesWordle.definirNroIntentos();
+            expect(resultado).toBe(nroIntentos);
+      });
 });
