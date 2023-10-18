@@ -87,6 +87,13 @@ describe("generarResultadoVacio", () => {
       });
 
     /*-------------------------------6. - agregarIntentoHistorial ---------------------------------*/
+    it('debería agregar un intento al historial y aumentar el número de intentos', () => {
+        const intento = 'palabra'; // Establece el intento deseado
+        const nroIntentosInicial = funcionesWordle.nroIntentos;
+         funcionesWordle.agregarIntentoHistorial(intento);
+        expect(funcionesWordle.listaIntentos[nroIntentosInicial]).toBe(intento);
+        expect(funcionesWordle.nroIntentos).toBe(nroIntentosInicial + 1);
+      });
 
  
 });
