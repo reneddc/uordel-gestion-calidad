@@ -42,5 +42,23 @@ describe("generarResultadoVacio", () => {
         ).not.toThrow();
     });
 
-    
+    /*-------------------------------3. esIntentoPermitido---------------------------------*/
+
+    it("debería lanzar una excepción WordleError cuando el intento no está en la lista de palabras seleccionables", () => {
+        const intento = "palabraNoPermitida"; // Introduce una palabra no permitida
+
+        expect(() => funcionesWordle.esIntentoPermitido(intento)).toThrowError(
+            WordleError,
+            "No existe esa palabra."
+        );
+    });
+
+    it("no debería lanzar una excepción cuando el intento está en la lista de palabras seleccionables", () => {
+        const intento = "HOLA"; 
+
+        // No se espera que se lance una excepción
+        expect(() => funcionesWordle.esIntentoPermitido(intento)).not.toThrow();
+    });
+
+
 });
