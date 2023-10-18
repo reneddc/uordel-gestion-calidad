@@ -11,10 +11,8 @@ describe("generarResultadoVacio", () => {
     /*------------------------------1.generarResultadoVacio ----------------------------------*/
 
     it("debería generar un resultado vacío con la longitud correcta", () => {
-        const tamPalabraSecreta = 5; // Establece la longitud deseada
-
+        const tamPalabraSecreta = 5; 
         funcionesWordle.generarResultadoVacio(tamPalabraSecreta);
-
         expect(funcionesWordle.cadenaResultado).toHaveLength(tamPalabraSecreta);
         expect(
             funcionesWordle.cadenaResultado.every((letra) => letra === "o")
@@ -26,8 +24,6 @@ describe("generarResultadoVacio", () => {
     it("debería lanzar una excepción WordleError cuando la palabra es incompleta", () => {
         const intento = "hola";
         const tamPalabraSecreta = 6;
-
-        // Utiliza una aserción para verificar que se lance una excepción WordleError con el mensaje correcto
         expect(() =>
             funcionesWordle.esIntentoIncompleto(intento, tamPalabraSecreta)
         ).toThrowError(WordleError, "Palabra Incompleta");
@@ -104,7 +100,7 @@ describe("generarResultadoVacio", () => {
             const resultado = funcionesWordle.obtenerCadenaResultado();
             expect(resultado).toEqual(cadenaResultado);
       });
-        /*-------------------------------7. - defineNroIntents ---------------------------------*/
+        /*-------------------------------8. - defineNroIntents ---------------------------------*/
 
     it('debería devolver el número de intentos', () => {
         const nroIntentos = 5; // Establece el número de intentos deseado
@@ -112,7 +108,26 @@ describe("generarResultadoVacio", () => {
             const resultado = funcionesWordle.definirNroIntentos();
             expect(resultado).toBe(nroIntentos);
       });
+        /*-------------------------------9. - definirIntento ---------------------------------*/
 
-
-      
+        
+      it('debería ejecutar acciones cuando nroIntentos es menor que 6', () => {
+        funcionesWordle.nroIntentos = 5;
+        funcionesWordle.generarResultadoVacio = jest.fn();
+        funcionesWordle.esIntentoIncompleto = jest.fn();
+        funcionesWordle.esIntentoPermitido = jest.fn();
+        funcionesWordle.agregarIntentoHistorial = jest.fn();
+        funcionesWordle.definirIntento('intento', 'tamPalabraSecreta');
+        expect(funcionesWordle.generarResultadoVacio).toHaveBeenCalledWith('tamPalabraSecreta');
+        expect(funcionesWordle.esIntentoIncompleto).toHaveBeenCalledWith('intento', 'tamPalabraSecreta');
+        expect(funcionesWordle.esIntentoPermitido).toHaveBeenCalledWith('intento');
+        expect(funcionesWordle.agregarIntentoHistorial).toHaveBeenCalledWith('intento');
+      });
+    
+     
+      it('debería capturar y manejar errores de intento incompleto', () => {
+        funcionesWordle.nroIntentos = 1;
+        const resultado = funcionesWordle.definirIntento('in', 'tamPalabraSecreta');
+        expect(resultado).toBe('No existe esa palabra.');
+    });          
 });
