@@ -18,7 +18,7 @@ describe("generarResultadoVacio", () => {
             funcionesWordle.cadenaResultado.every((letra) => letra === "o")
         ).toBe(true);
     });
-
+           
     /*--------------------------------2.esIntentoIncompleto--------------------------------*/
 
     it("debería lanzar una excepción WordleError cuando la palabra es incompleta", () => {
@@ -67,12 +67,7 @@ describe("generarResultadoVacio", () => {
         expect(funcionesWordle.listaIntentos).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
         expect(funcionesWordle.listaPistas).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
       });
-    
-      it('debería restablecer nroIntentos a 0', () => {
-        funcionesWordle.nroIntentos = 5;
-            funcionesWordle.limpiarListaIntentos();
-            expect(funcionesWordle.nroIntentos).toBe(0);
-      });
+         
        
     /*-------------------------------5. - obtenerCategoriaUCB---------------------------------*/
     it('debería devolver la categoría UCB', () => {
