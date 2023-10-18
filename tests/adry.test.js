@@ -55,8 +55,6 @@ describe("generarResultadoVacio", () => {
 
     it("no debería lanzar una excepción cuando el intento está en la lista de palabras seleccionables", () => {
         const intento = "HOLA"; 
-
-        // No se espera que se lance una excepción
         expect(() => funcionesWordle.esIntentoPermitido(intento)).not.toThrow();
     });
 
@@ -64,29 +62,31 @@ describe("generarResultadoVacio", () => {
     /*-------------------------------4. limpiarListaIntentos---------------------------------*/
 
     it('debería limpiar las listas de intentos y las pistas', () => {
-        // Modifica las propiedades antes de llamar a limpiarListaIntentos
         funcionesWordle.listaIntentos = ['A', 'B', 'C', 'D', 'E', 'F'];
         funcionesWordle.listaPistas = ['Pista1', 'Pista2', 'Pista3', 'Pista4', 'Pista5', 'Pista6'];
         funcionesWordle.nroIntentos = 6;
     
         funcionesWordle.limpiarListaIntentos();
     
-        // Verifica que las propiedades se hayan restablecido correctamente
         expect(funcionesWordle.listaIntentos).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
         expect(funcionesWordle.listaPistas).toEqual(['X', 'X', 'X', 'X', 'X', 'X']);
       });
     
       it('debería restablecer nroIntentos a 0', () => {
         funcionesWordle.nroIntentos = 5;
-    
-        // Llama al método limpiarListaIntentos
-        funcionesWordle.limpiarListaIntentos();
-    
-        // Verifica que nroIntentos se haya restablecido a 0
-        expect(funcionesWordle.nroIntentos).toBe(0);
+            funcionesWordle.limpiarListaIntentos();
+            expect(funcionesWordle.nroIntentos).toBe(0);
       });
        
     /*-------------------------------5. - obtenerCategoriaUCB---------------------------------*/
-    
+    it('debería devolver la categoría UCB', () => {
+        const categoriaUCB = 'UCB Categoría'; 
+        funcionesWordle.categoriaUCB = categoriaUCB;
+        const resultado = funcionesWordle.obtenerCategoriaUCB();
+        expect(resultado).toBe(categoriaUCB);
+      });
 
+    /*-------------------------------6. - agregarIntentoHistorial ---------------------------------*/
+
+ 
 });
