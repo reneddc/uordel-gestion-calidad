@@ -112,4 +112,7 @@ describe("generarResultadoVacio", () => {
             const resultado = funcionesWordle.definirNroIntentos();
             expect(resultado).toBe(nroIntentos);
       });
+
+
+      
 });
